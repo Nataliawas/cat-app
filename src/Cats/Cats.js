@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import './Cats.css'
 class Cats extends Component {
 
     state = {
@@ -25,19 +25,17 @@ class Cats extends Component {
                 });
                 this.setState({ cats })
             });
-        console.log(cats)
 
-        console.log(this.state)
     }
     render() {
         return (
 
-            <div>
-                <ul>
-                    {this.state.cats.map(cat => (
-                        <li key={cat.id} ><img src={cat.url} alt="koteł" /> </li>
-                    ))}
-                </ul>
+            <div className="cat-container">
+                <div className="title">RANDOM CATS</div>
+                {this.state.cats.map(cat => (
+                    <div className="cat" key={cat.id} ><img src={cat.url} alt="koteł" /> </div>
+                ))}
+
             </div>
 
         );
